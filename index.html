@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_lqUNwyfauvkWT-19vGMgvtrtTVBeAckJqw&s" alt="PaperWorks Logo" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> PAPER WORKS </title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fa;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        /* Fade-in effect for page load */
+        @keyframes fadeIn {
+            to {
+                opacity: 1; 
+            }
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #0a4b5c;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a { 
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #0a4b5c;
+            opacity: 30%;
+        }
+
+        /* Logo in Navbar */
+        .navbar img {
+            width: 70px; /* Adjust the size of the logo */
+            height: auto;
+            border-radius: 50%;
+            margin-right: 50px;
+            
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #0a4b5c;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            animation: slideIn 1s forwards;
+            animation-delay: 0.5s;
+        }
+
+        /* Header Text Animation */
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+
+        .header h5 {
+            font-size: 24px;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+
+        /* Button Styles */
+        .active {
+            animation: pulse 1.5s infinite;
+            background-color: #00aaff;
+            color: white;
+            padding: 15px 30px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 30px;
+            border: magenta;
+            text-align: center;
+            transition: background-color 0.3s, transform 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .active:hover {
+            background-color: #0077cc;
+            transform: scale(1.1);
+        }
+
+        /* Pulse animation for the "SIGN UP" button */
+        @keyframes pulse {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        /* Search Bar */
+        .search-bar {
+            margin-top: 15px;
+            border-radius: 30px;
+            border: 2px solid #ddd;
+            padding: 12px;
+            font-size: 16px;
+            width: 250px;
+            transition: width 0.5s ease;
+        }
+
+        .search-bar:focus {
+            width: 300px;
+            border-color: #00aaff;
+        }
+
+        /* Product Images Section */
+        .product-img {
+            animation: bounce 2s infinite;
+            border-radius: 50%;
+            width: 120px;
+            height: 120px;
+            object-fit: cover;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        @keyframes bounce {
+            0%,
+            100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-15px);
+            }
+        }
+
+        .product-img:hover {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+        }
+
+        /* About Us Section */
+        .about-us {
+            background-color: #e9f4f8;
+            padding: 40px;
+            text-align: center;
+            font-size: 18px;
+            color: #333;
+            margin-top: 40px;
+        }
+
+        .about-us h2 {
+            font-size: 30px;
+            color: #0a4b5c;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #0a4b5c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #00aaff;
+        }
+
+        footer a:hover {
+            color: #0077cc;
+        }
+
+        /* Social Media Icons */
+        .social-icons {
+            margin-top: 20px;
+        }
+
+        .social-icons a {
+            text-decoration: none;
+            margin: 0 15px;
+            font-size: 25px;
+            color: white;
+            transition: color 0.3s ease;
+        }
+
+        .social-icons a:hover {
+            color: #00aaff;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .header h1 {
+                font-size: 45px;
+            }
+
+            .header h5 {
+                font-size: 18px;
+            }
+
+            .product-img {
+                width: 90px;
+                height: 90px;
+            }
+
+            .search-bar {
+                width: 200px;
+            }
+
+            .active {
+                padding: 12px 25px;
+            }
+
+            .about-us {
+                font-size: 16px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_lqUNwyfauvkWT-19vGMgvtrtTVBeAckJqw&s" alt="PaperWorks Logo">
+        <a href="index.html">Home</a>
+        <a href="REGISTERATION.html">Sign Up</a>
+        <a href="search.html">Search</a>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>PAPER WORKS</h1>
+        <h5>Converter</h5>
+        <a href="REGISTERATION.html"><button class="active">Sign Up</button></a>
+        <br>
+        <input class="search-bar" type="text" placeholder="Search..." />
+    </div>
+
+    <hr>
+
+    <!-- Product Section -->
+    <div class="product-section" style="text-align: center; padding: 40px 0;">
+        <h2 style="font-size: 30px; margin-bottom: 20px;">Our Services</h2>
+        <table align="center" style="width: 80%; text-align: center;">
+            <tr>
+                <td>
+                    <a href="https://www.ilovepdf.com/pdf_to_jpg">
+                        <img class="product-img" src="data:image/png;base64,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" alt="Service 1">
+                    </a>
+                </td>
+                <td>
+                    <a href="https://www.ilovepdf.com/jpg_to_pdf">
+                        <img class="product-img" src="https://lh3.googleusercontent.com/ubrSrrcBipLg-7js3qr9ogr6nhd4KnzwBqHFfzwmaR37bAYkLSCOTVYChFl8jSzawg" alt="Service 2">
+                    </a>
+                </td>
+                <td>
+                    <a href="https://www.ilovepdf.com/powerpoint_to_pdf">
+                        <img class="product-img" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmhi5wc3oVQUODqjDjoTFbOj6JKZBh8gk34Puvh15g7mziow9HrX0IFOYBXcvTNAZGDTc&usqp=CAU" alt="Service 3">
+                    </a>
+                </td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- About Us Section -->
+    <div class="about-us">
+        <h2>About Us</h2>
+        <p>
+            Paper Works is a leading online platform that offers seamless solutions for converting PDF files into high-quality JPG images. Our platform is designed for users who need quick and reliable file conversion. We prioritize user experience, speed, and accuracy.
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Paper Works. All Rights Reserved.</p>
+        <div class="social-icons">
+            <a href="#">Whatsapp</a>
+            <a href="https://x.com/SiddiquiShahil1">Twitter</a>
+            <a href="https://www.instagram.com/shyxuzr.___/">Instagram</a>
+        </div>
+    </footer>
+</body>
+
+</html>
