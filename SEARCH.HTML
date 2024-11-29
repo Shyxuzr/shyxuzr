@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="https://media.istockphoto.com/id/539003236/vector/books-icon-on-white-round-vector-button.jpg?s=612x612&w=0&k=20&c=fe_hzcbv8kujx4rYtCcOf1lf4gkrmBsaLhJ-00XOmzE=" alt="PaperWorks Logo"" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search | Paper Works</title>
+    <!-- Google Fonts (Poppins for modern typography) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fa;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #0a4b5c;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00aaff;
+        }
+
+        /* Search Page Section */
+        .search-container {
+            text-align: center;
+            padding: 50px 0;
+            background-color: #0a4b5c;
+            color: white;
+        }
+
+        .search-container h1 {
+            font-size: 50px;
+            margin: 0;
+        }
+
+        .search-container input {
+            padding: 12px;
+            font-size: 16px;
+            width: 300px;
+            margin-top: 20px;
+            border-radius: 25px;
+            border: 2px solid #ddd;
+            transition: width 0.3s ease;
+        }
+
+        .search-container input:focus {
+            width: 350px;
+            border-color: #00aaff;
+        }
+
+        .search-container button {
+            background-color: #00aaff;
+            color: white;
+            padding: 12px 25px;
+            border: none;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .search-container button:hover {
+            background-color: #0077cc;
+        }
+
+        /* Search Results Section */
+        .results-container {
+            padding: 30px;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .result-item {
+            background-color: #fff;
+            padding: 15px;
+            margin: 10px 0;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .result-item h3 {
+            margin: 0;
+            font-size: 20px;
+            color: #0a4b5c;
+        }
+
+        .result-item p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        footer {
+            background-color: #0a4b5c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #00aaff;
+        }
+
+        footer a:hover {
+            color: #0077cc;
+        }
+
+        /* Responsive styles */
+        @media (max-width: 768px) {
+            .search-container h1 {
+                font-size: 35px;
+            }
+
+            .search-container input {
+                width: 250px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="REGISTERATION.html">Sign Up</a>
+        <a href="search.html">Search</a>
+    </div>
+
+    <!-- Search Page Section -->
+    <div class="search-container">
+        <h1>Search Services</h1>
+        <input id="searchInput" type="text" placeholder="Enter keywords..." />
+        <button onclick="searchService()">Search</button>
+    </div>
+
+    <!-- Search Results Section -->
+    <div class="results-container" id="resultsContainer">
+        <!-- Results will be displayed here -->
+    </div>
+
+    <footer>
+        <p>&copy; 2024 PaperWorks. All Rights Reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="privacy.html">Privacy Policy</a></p>
+    </footer>
+
+    <script>
+        // Dummy data for services
+        const services = [
+            { title: "PDF to JPG Converter", description: "Convert PDF documents to JPG images instantly." },
+            { title: "PDF Editor", description: "Edit your PDF documents online with ease." },
+            { title: "Image to PDF Converter", description: "Convert images (JPG, PNG, etc.) to PDF format." },
+            { title: "Merge PDFs", description: "Combine multiple PDF files into one document." },
+            { title: "Split PDF", description: "Split your PDF into smaller files." },
+        ];
+
+        // Search function
+        function searchService() {
+            const query = document.getElementById('searchInput').value.toLowerCase();
+            const resultsContainer = document.getElementById('resultsContainer');
+            resultsContainer.innerHTML = ''; // Clear previous results
+
+            // Filter the services based on the query
+            const filteredServices = services.filter(service => 
+                service.title.toLowerCase().includes(query) || 
+                service.description.toLowerCase().includes(query)
+            );
+
+            if (filteredServices.length === 0) {
+                resultsContainer.innerHTML = "<p>No results found. Try another search.</p>";
+            } else {
+                // Display search results
+                filteredServices.forEach(service => {
+                    const resultItem = document.createElement('div');
+                    resultItem.className = 'result-item';
+                    resultItem.innerHTML = `
+                        <h3>${service.title}</h3>
+                        <p>${service.description}</p>
+                    `;
+                    resultsContainer.appendChild(resultItem);
+                });
+            }
+        }
+    </script>
+</body>
+
+</html>
