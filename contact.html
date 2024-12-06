@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Paper Works</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fa;
+            color: #333;
+            animation: fadeIn 2s forwards;
+        }
+
+        /* Fade-in effect */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #0a4b5c;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00aaff;
+        }
+
+        .navbar img {
+            width: 70px;
+            height: auto;
+            border-radius: 50%;
+        }
+
+        /* Contact Us Section */
+        .contact-section {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: #ffffff;
+            padding: 30px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .contact-section h2 {
+            text-align: center;
+            color: #0a4b5c;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        .contact-section p {
+            text-align: center;
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 30px;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .contact-form input,
+        .contact-form textarea {
+            width: 100%;
+            padding: 12px;
+            font-size: 14px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            outline: none;
+            transition: border-color 0.3s ease;
+        }
+
+        .contact-form input:focus,
+        .contact-form textarea:focus {
+            border-color: #00aaff;
+        }
+
+        .contact-form button {
+            padding: 12px;
+            background-color: #0a4b5c;
+            color: white;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #0077cc;
+        }
+
+        /* Contact Info Section */
+        .contact-info {
+            margin-top: 30px;
+            text-align: center;
+        }
+
+        .contact-info h3 {
+            font-size: 20px;
+            color: #0a4b5c;
+            margin-bottom: 10px;
+        }
+
+        .contact-info p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .contact-section {
+                margin: 20px;
+                padding: 20px;
+            }
+
+            .contact-section h2 {
+                font-size: 24px;
+            }
+
+            .contact-info h3 {
+                font-size: 18px;
+            }
+
+            .contact-info p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_lqUNwyfauvkWT-19vGMgvtrtTVBeAckJqw&s" alt="PaperWorks Logo">
+        <a href="index.html">Home</a>
+        <a href="REGISTERATION.html">Sign Up</a>
+        <a href="search.html">Search</a>
+        <a href="contact.html">Contact Us</a>
+    </div>
+
+    <!-- Contact Section -->
+    <div class="contact-section">
+        <h2>Contact Us</h2>
+        <p>If you have any questions or feedback, feel free to reach out to us using the form below.</p>
+
+        <form class="contact-form" action="submit_contact.php" method="post">
+            <input type="text" name="name" placeholder="Your Name" required>
+            <input type="email" name="email" placeholder="Your Email" required>
+            <textarea name="message" rows="5" placeholder="Your Message" required></textarea>
+            <button type="submit">Send Message</button>
+        </form>
+
+        <div class="contact-info">
+            <h3>Our Office</h3>
+            <p>123 Paper Street, Creativity City, PC 45678</p>
+            <p>Email: support@paperworks.com</p>
+            <p>Phone: +919867332388</p>
+        </div>
+    </div>
+</body>
+
+</html>
