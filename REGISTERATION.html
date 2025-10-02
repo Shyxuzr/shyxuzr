@@ -1,1 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <link rel="icon" href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS_lqUNwyfauvkWT-19vGMgvtrtTVBeAckJqw&s" alt="PaperWorks Logo"" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - Paper Works</title>
+    <!-- Google Fonts (Poppins for modern typography) -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        /* Global Styles */
+        body {
+            margin: 0;
+            font-family: 'Poppins', sans-serif;
+            background-color: #f4f7fa;
+            padding: 0;
+            opacity: 0;
+            animation: fadeIn 2s forwards;
+        }
+
+        /* Fade-in effect for page load */
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* Navbar Styles */
+        .navbar {
+            background-color: #0a4b5c;
+            padding: 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .navbar a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+            margin: 0 15px;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        .navbar a:hover {
+            color: #00aaff;
+        }
+
+        /* Header Section */
+        .header {
+            background-color: #0a4b5c;
+            color: white;
+            padding: 50px 0;
+            text-align: center;
+            animation: slideIn 1s forwards;
+            animation-delay: 0.5s;
+        }
+
+        @keyframes slideIn {
+            to {
+                transform: translateY(0);
+                opacity: 1;
+            }
+        }
+
+        .header h1 {
+            font-size: 60px;
+            margin: 0;
+        }
+
+        .header h5 {
+            font-size: 24px;
+            font-weight: 300;
+            margin-top: 10px;
+        }
+
+        /* Sign Up Form */
+        .signup-form {
+            width: 40%;
+            margin: 40px auto;
+            background-color: white;
+            padding: 30px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+
+        .signup-form h2 {
+            text-align: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+            color: #0a4b5c;
+        }
+
+        .signup-form input {
+            width: 100%;
+            padding: 12px;
+            margin: 10px 0;
+            border: 2px solid #ddd;
+            border-radius: 30px;
+            font-size: 16px;
+            color: #333;
+            transition: border-color 0.3s ease;
+        }
+
+        .signup-form input:focus {
+            border-color: #00aaff;
+        }
+
+        .signup-form button {
+            background-color: #00aaff;
+            color: white;
+            padding: 15px 30px;
+            font-size: 16px;
+            border: none;
+            border-radius: 30px;
+            width: 100%;
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s ease;
+        }
+
+        .signup-form button:hover {
+            background-color: #0077cc;
+            transform: scale(1.05);
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #0a4b5c;
+            color: white;
+            padding: 20px;
+            text-align: center;
+            font-size: 14px;
+        }
+
+        footer a {
+            text-decoration: none;
+            color: #00aaff;
+        }
+
+        footer a:hover {
+            color: #0077cc;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 768px) {
+            .signup-form {
+                width: 80%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Navigation Bar -->
+    <div class="navbar">
+        <a href="index.html">Home</a>
+        <a href="REGISTERATION.html">Sign Up</a>
+        <a href="SEARCH.HTML">Search</a>
+    </div>
+
+    <!-- Header Section -->
+    <div class="header">
+        <h1>PAPER WORKS</h1>
+        <h5>Convert Your PDFs to JPGs</h5>
+    </div>
+
+    <!-- Sign Up Form -->
+    <div class="signup-form">
+        <h2>Sign Up</h2>
+        <form action="#" method="POST">
+            <input type="text" name="fullName" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email Address" required>
+            <input type="password" name="password" placeholder="Password" required>
+            <button type="submit">Create Account</button>
+        </form>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 PaperWorks. All Rights Reserved.</p>
+        <p><a href="contact.html">Contact Us</a> | <a href="privacy.html">Privacy Policy</a></p>
+        <div class="social-icons">
+            <a href="https://www.facebook.com" target="_blank">Facebook</a> |
+            <a href="https://www.twitter.com" target="_blank">Twitter</a> |
+            <a href="https://www.linkedin.com" target="_blank">LinkedIn</a> |
+            <a href="https://www.instagram.com" target="_blank">Instagram</a>
+        </div>
+    </footer>
+</body>
+
+</html>
 
